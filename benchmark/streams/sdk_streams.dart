@@ -18,5 +18,5 @@ void main() {
   // Avoid optimizations around root zone (no application usually w/o a zone).
   runZoned(() {
     streams.getStreams();
-  }, onError: (_, __){});
+  }, onError: (_, __) {});
 }

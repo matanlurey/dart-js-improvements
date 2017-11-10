@@ -7,10 +7,11 @@ import 'dart:io';
 import 'package:glob/glob.dart';
 
 /// Runs all benchmarks a number of times and returns sample results.
-void main() {
-  const times = 20;
+void main(List<String> args) {
+  final pattern = args.isEmpty ? 'build/**.dart.js' : args.first;
+  const times = 100;
   final exclude = new Glob('build/**/packages/**.dart.js');
-  for (final File file in new Glob('build/**.dart.js').listSync()) {
+  for (final File file in new Glob(pattern).listSync()) {
     if (exclude.matches(file.path)) {
       continue;
     }

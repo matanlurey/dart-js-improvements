@@ -104,3 +104,37 @@ We run benchmarks creating 1000 stream-likes and listening to them.
 * Size: 204kB
 * Mean: 139.23ms
 * Median: 138ms
+
+### Collections
+
+We create 1000 lists or arrays, add items, use some common methods.
+
+**NOTE**: Code-size is not included here, since the JS code is not minified.
+
+### dart_array.dart.js
+
+* Mean: 145.86ms
+* Median: 121ms
+
+### js_array.dart.js
+
+_Using `eval()`, which has overhead on top of plain JavaScript._
+
+* Mean: 122.94ms
+* Median: 121ms
+
+### JSON
+
+Decodes+encodes an almost 13mb representative JSON data set.
+
+**NOTE**: Code-size is not included here as it is not significantly different.
+
+### dart_json.dart.js
+
+* Mean: 957.56ms
+* Median: 948ms
+
+### js_json.dart.js
+
+* Mean: 301.96ms
+* Median: 297ms

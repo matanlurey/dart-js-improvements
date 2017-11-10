@@ -12,6 +12,7 @@ dev_dependencies:
 
 transformers:
   - $dart2js:
+      minify: true
       commandLineOptions:
           - --dump-info
           - --trust-type-annotations

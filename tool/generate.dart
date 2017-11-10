@@ -6,6 +6,7 @@ import 'dart:io';
 
 import 'package:dart_style/dart_style.dart';
 
+import 'src/arrays.dart' as arrays;
 import 'src/classes.dart' as classes;
 import 'src/enums.dart' as enums;
 import 'src/streams.dart' as streams;
@@ -21,6 +22,9 @@ void main() {
   );
   new File('lib/src/generated/streams.dart').writeAsStringSync(
     dartfmt(streams.generate(size)),
+  );
+  new File('lib/src/generated/arrays.dart').writeAsStringSync(
+    dartfmt(arrays.generate(size)),
   );
 }
 
