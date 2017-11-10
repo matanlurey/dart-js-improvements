@@ -5,7 +5,6 @@
 @JS()
 library dart_js_improvements.benchmark.rtti.without_runtime_type;
 
-import 'package:dart_js_improvements/benchmark.dart';
 import 'package:dart_js_improvements/src/generated/classes.dart';
 import 'package:js/js.dart';
 
@@ -21,7 +20,5 @@ void main() {
   $externalListen = allowInterop((dynamic arg) {
     print(arg.runtimeType);
   });
-  print(runSyncTimed(() {
-    $externalVar = instantiate();
-  }));
+  $externalVar = instantiate();
 }

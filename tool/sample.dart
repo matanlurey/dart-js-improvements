@@ -29,12 +29,13 @@ void main() {
 List<num> _sample(String file, int times) {
   final results = new List<num>(times);
   for (var i = 0; i < times; i++) {
+    final stopwatch = new Stopwatch()..start();
     final result = Process.runSync('node', [file]);
     if (result.stderr != '') {
       throw result.stderr;
     }
-    final String output = result.stdout;
-    results[i] = num.parse(output.split('ms').first);
+    stopwatch.stop();
+    results[i] = stopwatch.elapsedMilliseconds;
   }
   return results;
 }

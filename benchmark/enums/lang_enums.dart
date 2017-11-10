@@ -5,12 +5,13 @@
 @JS()
 library dart_js_improvements.benchmark.rtti.without_runtime_type;
 
-import 'package:dart_js_improvements/src/generated/classes.dart';
+import 'package:dart_js_improvements/src/generated/enums.dart' as enums;
 import 'package:js/js.dart';
 
 /// We write to this to avoid tree-shaking removing everything.
+@JS()
 external set $externalVar(dynamic externalVar);
 
 void main() {
-  $externalVar = instantiate();
+  $externalVar = enums.getAllLangEnumTypes();
 }

@@ -7,13 +7,26 @@ import 'dart:io';
 import 'package:dart_style/dart_style.dart';
 
 import 'src/classes.dart' as classes;
+import 'src/enums.dart' as enums;
 
 /// Generates example programs to demonstrate costs in Dart2JS.
 void main() {
   const size = 1000; // TODO: Make customizable.
   new File('lib/src/generated/classes.dart').writeAsStringSync(
-    _dartfmt.format(classes.generate(size)),
+    dartfmt(classes.generate(size)),
   );
+  new File('lib/src/generated/enums.dart').writeAsStringSync(
+    dartfmt(enums.generate(size)),
+  );
+}
+
+String dartfmt(String source) {
+  try {
+    return _dartfmt.format(source);
+  } catch (e) {
+    stderr.writeln(e);
+    return source;
+  }
 }
 
 final _dartfmt = new DartFormatter();
