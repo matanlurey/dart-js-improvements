@@ -8,6 +8,7 @@ import 'package:dart_style/dart_style.dart';
 
 import 'src/classes.dart' as classes;
 import 'src/enums.dart' as enums;
+import 'src/streams.dart' as streams;
 
 /// Generates example programs to demonstrate costs in Dart2JS.
 void main() {
@@ -17,6 +18,9 @@ void main() {
   );
   new File('lib/src/generated/enums.dart').writeAsStringSync(
     dartfmt(enums.generate(size)),
+  );
+  new File('lib/src/generated/streams.dart').writeAsStringSync(
+    dartfmt(streams.generate(size)),
   );
 }
 

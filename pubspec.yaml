@@ -4,14 +4,11 @@ environment:
   sdk: ">=2.0.0-dev <2.0.0"
 
 dev_dependencies:
-  args:
-  code_builder:
   dart_style:
   glob:
   js:
   jsbench:
   node_preamble:
-  test:
 
 transformers:
   - $dart2js:

@@ -43,19 +43,21 @@ $ dart tool/patch.dart
 $ dart tool/sample.dart
 ```
 
+The following used a sample-size of _100_.
+
 ### RTTI
 
 We run benchmarks instantiating 1000 classes that _may_ store RTTI.
 
 #### with_runtime_type.dart.js
 
-* Size: 161kB
+* Size: 162kB
 * Mean: 203.25ms
 * Median: 199ms
 
 #### without_runtime_type.dart.js
 
-* Size: 74.9kB
+* Size: 49.2kB
 * Mean: 132.75ms
 * Median: 133ms
 
@@ -65,18 +67,40 @@ We run benchmarks instantiating 1000 enums with 5 fields each.
 
 ### class_enums.dart.js
 
-* Size: 231kB
-* Mean: 154.4ms
-* Median: 153ms
+* Size: 205kB
+* Mean: 134.39ms
+* Median: 132ms
 
 ### int_enums.dart.js
 
-* Size: 40kB
-* Mean: 72.95ms
-* Median: 73ms
+* Size: 10.3kB
+* Mean: 61.97ms
+* Median: 61ms
 
 ### lang_enums.dart.js
 
-* Size: 320kB
-* Mean: 161.9ms
-* Median: 161ms
+* Size: 264kB
+* Mean: 132.09ms
+* Median: 131ms
+
+### Streams
+
+We run benchmarks creating 1000 stream-likes and listening to them.
+
+### listenables.dart.js
+
+* Size: 160kB
+* Mean: 129.49ms
+* Median: 129ms
+
+### zoned_listenables.dart.js
+
+* Size: 167kB
+* Mean: 131.4ms
+* Median: 131ms
+
+### sdk_streams.dart.js
+
+* Size: 204kB
+* Mean: 139.23ms
+* Median: 138ms
