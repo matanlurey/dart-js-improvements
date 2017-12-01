@@ -123,6 +123,16 @@ _Using `eval()`, which has overhead on top of plain JavaScript._
 * Mean: 122.94ms
 * Median: 121ms
 
+### dart_object.dart.js
+
+* Mean: 160.8ms
+* Median: 152ms
+
+### js_object.dart.js
+
+* Mean: 148.58ms
+* Median: 147ms
+
 ### JSON
 
 Decodes+encodes an almost 13mb representative JSON data set.
